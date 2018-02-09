@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class Anim_Player : MonoBehaviour {
 
-    private Animator anim;
+    public Animator animr;
     public Player player;
 
     // Use this for initialization
     void Start () {
-        anim = gameObject.GetComponent<Animator>();
-    }
+        animr = gameObject.GetComponent<Animator>();
+}
 	
 	// Update is called once per frame
 	void Update () {
         
         //Setting Anim Values
-        anim.SetBool("Grounded", player.grounded);
-        anim.SetFloat("Speed", Mathf.Abs(player.rb2d_player.velocity.x));
+        animr.SetBool("Grounded", player.grounded);
+        animr.SetFloat("Speed", player.velocity_x);
+
+        //Regulating animation speed depending on player velocity
+        if (player.velocity_x > 0.1f)
+        {
+            animr.speed = (player.velocity_x / 2.5f);
+        }
+        else
+        {
+            animr.speed = 1;
+        }
+
+
+
     }
 }

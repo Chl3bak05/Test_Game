@@ -185,7 +185,7 @@ Transform:
   m_Children:
   - {fileID: 1739156095}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412583160
 GameObject:
@@ -259,7 +259,7 @@ Transform:
   m_Children:
   - {fileID: 462873616}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425578130
 GameObject:
@@ -313,7 +313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.5576687
+  orthographic size: 3.057657
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -336,8 +336,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 425578130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.84, y: 2.05, z: -7.29}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalPosition: {x: 2.77, y: 1.91, z: -7.29}
+  m_LocalScale: {x: 0.63357764, y: 0.6335776, z: 0.6335776}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -418,7 +418,7 @@ Transform:
   - {fileID: 2030608124}
   - {fileID: 1668927417}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &444407837
 MonoBehaviour:
@@ -432,10 +432,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_speed: 3
-  speed: 50
   jump_power: 200
+  friction_value: 0.8
   grounded: 0
   rb2d_player: {fileID: 444407832}
+  velocity_x: 0
 --- !u!1 &462873615
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +478,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 462873615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -502,7 +503,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 462873615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -527,7 +528,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 462873615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -552,7 +553,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 462873615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -577,7 +578,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 462873615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -594,51 +595,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.3697953, y: 1.142447}
   m_EdgeRadius: 0
---- !u!1 &1163245251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1163245252}
-  - component: {fileID: 1163245253}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1163245252
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1163245251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011, y: 0.85, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1163245253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1163245251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3aa5b5f0306edb4d8bb67f0ec9f0e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_speed: 3
-  speed: 50
-  jump_power: 150
-  grounded: 0
-  rb2d_player: {fileID: 0}
 --- !u!1 &1668927416
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ee0d22582505941b1396d11daa92c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Anim_Player: {fileID: 2030608127}
 --- !u!61 &1668927419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -747,7 +702,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1739156094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -772,7 +727,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1739156094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -797,7 +752,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1739156094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -822,7 +777,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1739156094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -847,7 +802,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1739156094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 16b43ca319a2c8c48882a11f280306bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -967,4 +922,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47923b147b75884499c047a3b4e094b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animr: {fileID: 2030608126}
   player: {fileID: 444407837}
