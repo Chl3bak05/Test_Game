@@ -52,14 +52,21 @@ public class Player : MonoBehaviour {
             {
                 if (Can_DJump)
                 {
-                    Can_DJump = false;
+                    
                     rb2d_player.velocity = new Vector2(rb2d_player.velocity.x, 0); 
                     rb2d_player.AddForce(Vector2.up * ((jump_power)*0.8f));
+                    Can_DJump = false;
 
                 }
             }
                         
         }
+        if (grounded)
+        {
+            Can_DJump = true;
+        }
+
+
     }
 
     void FixedUpdate()
