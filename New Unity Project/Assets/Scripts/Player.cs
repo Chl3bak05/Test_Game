@@ -8,12 +8,14 @@ public class Player : MonoBehaviour {
     private float speed = 50f;
     public float jump_power = 300f;
     public float friction_value = 0.8f;
+    public float velocity_x;
 
     public bool grounded;
+    public bool Can_DJump;
 
     public Rigidbody2D rb2d_player;
 
-    public float velocity_x;
+    
 
     // Use this for initialization
     void Start ()
@@ -39,9 +41,24 @@ public class Player : MonoBehaviour {
         }
 
         //Jumping
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump"))
         {          
-                rb2d_player.AddForce(Vector2.up * jump_power);           
+            if (grounded)
+            {
+                rb2d_player.AddForce(Vector2.up * jump_power);
+                Can_DJump = true;
+            }
+            else
+            {
+                if (Can_DJump)
+                {
+                    Can_DJump = false;
+                    rb2d_player.velocity = new Vector2(rb2d_player.velocity.x, 0); 
+                    rb2d_player.AddForce(Vector2.up * ((jump_power)*0.8f));
+
+                }
+            }
+                        
         }
     }
 

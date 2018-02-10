@@ -20,7 +20,7 @@ public class Anim_Player : MonoBehaviour {
         animr.SetFloat("Speed", player.velocity_x);
 
         //Regulating animation speed depending on player velocity
-        if (player.velocity_x > 0.1f)
+        if (player.velocity_x >= 0.1f)
         {
             animr.speed = (player.velocity_x / 2.5f);
         }
