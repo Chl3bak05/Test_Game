@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
     {
         //Setting Horizontal velocity
         velocity_x = Mathf.Abs(rb2d_player.velocity.x);
-        //Limiting speed
+        //Mirroring Player
         if (Input.GetAxis("Horizontal") < -0.1f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -52,8 +52,8 @@ public class Player : MonoBehaviour {
             {
                 if (Can_DJump)
                 {
-                    
-                    rb2d_player.velocity = new Vector2(rb2d_player.velocity.x, 0); 
+
+                    rb2d_player.velocity = new Vector2(rb2d_player.velocity.x, 0);
                     rb2d_player.AddForce(Vector2.up * ((jump_power)*0.8f));
                     Can_DJump = false;
 
@@ -72,10 +72,9 @@ public class Player : MonoBehaviour {
     void FixedUpdate()
     {
         //Fake friction
-        Vector3 ease_Velocity = rb2d_player.velocity;
+        Vector2 ease_Velocity = rb2d_player.velocity;
         ease_Velocity.x *= friction_value;
         ease_Velocity.y = rb2d_player.velocity.y;
-        ease_Velocity.z = 0.0f;
 
         if (grounded)
         {
