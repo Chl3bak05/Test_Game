@@ -7,9 +7,12 @@ public class Anim_Player : MonoBehaviour {
     public Animator animr;
     public Player player;
 
+    public Animation anim1;
+
     // Use this for initialization
     void Start () {
         animr = gameObject.GetComponent<Animator>();
+        
 }
 	
 	// Update is called once per frame
