@@ -1640,12 +1640,13 @@ MonoBehaviour:
   jump_power: 200
   friction_value: 0.8
   velocity_x: 0
+  hurt: 0
   grounded: 0
   Can_DJump: 0
   cur_health: 0
   max_health: 5
   rb2d_player: {fileID: 444407832}
-  player_spr: {fileID: 2030608123}
+  player_spr: {fileID: 2030608127}
 --- !u!1 &462873615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,7 +4543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animr: {fileID: 2030608126}
   player: {fileID: 444407837}
-  anim1: {fileID: 2030608128}
+  player_spr: {fileID: 2030608123}
 --- !u!111 &2030608128
 Animation:
   m_ObjectHideFlags: 0

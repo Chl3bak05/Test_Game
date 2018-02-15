@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public float jump_power = 300f;
     public float friction_value = 0.8f;
     public float velocity_x;
+    public bool hurt;
 
     public bool grounded;
     public bool Can_DJump;
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour {
     public int max_health = 100;
 
     public Rigidbody2D rb2d_player;
-    public GameObject player_spr;
+    public Anim_Player  player_spr;
 
     
 
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         rb2d_player = gameObject.GetComponent<Rigidbody2D>();
-        player_spr = GameObject.FindGameObjectWithTag("Player_spr");
+        
 
         cur_health = max_health;
     }
@@ -133,8 +134,9 @@ public class Player : MonoBehaviour {
             dmg = cur_health;
         }
         cur_health -= dmg;
+    
 
-        player_spr.gameObject.GetComponent<Animation>().Play("RedFlashAnim");
+
     }
     public IEnumerator KnockBack(float knockDur, float knockBackPwr, Vector3 knockBackDir)
     {
@@ -144,11 +146,12 @@ public class Player : MonoBehaviour {
         {
             timer += Time.deltaTime;
             rb2d_player.velocity = new Vector2(0, 0);   //<----------------------
-            rb2d_player.AddForce(new Vector3(knockBackDir.x * -100, knockBackDir.y * knockBackPwr, transform.position.z));
+            rb2d_player.AddForce(new Vector3(knockBackDir.x * -100, knockBackPwr, transform.position.z));
+            hurt = true;
 
         }
         yield return 0;
-
+        hurt = false;
     }
 }
 

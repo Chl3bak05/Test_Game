@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spikes : MonoBehaviour {
 
     private Player player;
+    private Anim_Player animn;
 
     void Start()
     {
@@ -15,10 +16,11 @@ public class Spikes : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            StartCoroutine(player.KnockBack(0.02f, 300, player.transform.position));
+            StartCoroutine(player.KnockBack(0.02f, 200, player.rb2d_player.velocity));
             
             player.Damage(1);
-            
+         
+
         }
     }
 }
