@@ -36,6 +36,7 @@ public class Camera_Behaviour : MonoBehaviour {
         //Setting new camera position 
         transform.position = new Vector3(pos_x, pos_y, transform.position.z);
 
+        //Bounds for Camera
         if (bounds)
         {
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, min_Camera_Pos.x, max_Camera_Pos.x),
@@ -44,6 +45,7 @@ public class Camera_Behaviour : MonoBehaviour {
         }
     }
 
+    //Bounds set buttons 
     public void Set_Min_Cam_Position()
     {
         min_Camera_Pos = gameObject.transform.position;

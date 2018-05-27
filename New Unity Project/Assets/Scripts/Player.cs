@@ -73,11 +73,12 @@ public class Player : MonoBehaviour {
         {
             Can_DJump = true;
         }
-
+        //Health setting
         if (cur_health > max_health)
         {
             cur_health = max_health;
         }
+        //Death var
         if (cur_health <= 0)
         {
             Kill_Player();
@@ -121,12 +122,12 @@ public class Player : MonoBehaviour {
 
         
     }
-
+    //Restarting Game
     void Kill_Player()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
-
+    //Damaging player
     public void Damage(int dmg)
     {
         if (cur_health < dmg)
@@ -138,6 +139,7 @@ public class Player : MonoBehaviour {
 
 
     }
+    //Knockback, adding force in time
     public IEnumerator KnockBack(float knockDur, float knockBackPwr, Vector3 knockBackDir)
     {
 

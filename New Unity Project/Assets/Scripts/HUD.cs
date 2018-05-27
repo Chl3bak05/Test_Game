@@ -16,6 +16,7 @@ public class HUD : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
     }
+    //Hearts GUI Update
     void Update()
     {
         HeartUI.sprite = Heart_Sprites[player.cur_health];

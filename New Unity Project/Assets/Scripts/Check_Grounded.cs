@@ -11,25 +11,30 @@ public class Check_Grounded : MonoBehaviour {
     {
         player = gameObject.GetComponentInParent<Player>();
 	}
-    //Sending grounded value to Anim_Player
+    //Sending grounded value to Anim_Player on contact with ground
     void OnTriggerEnter2D(Collider2D col)
     {
-        player.grounded = true;
+        if (!col.CompareTag("Spikes"))
+        {
+            player.grounded = true;
+        }
+        
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        player.grounded = true;
+        if (!col.CompareTag("Spikes"))
+        {
+            player.grounded = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        player.grounded = false;
+        if (!col.CompareTag("Spikes"))
+        {
+            player.grounded = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-		
-	}
 }

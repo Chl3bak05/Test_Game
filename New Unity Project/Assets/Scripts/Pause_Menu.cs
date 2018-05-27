@@ -5,25 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Pause_Menu : MonoBehaviour
     {
-
+    //References
         public GameObject Pause_UI;
-
+    //Boolean
         private bool paused = false;
 
         
-
+    
         private void Start()
         {
-            Pause_UI.SetActive(false);
+        //Default off Pause screen
+        Pause_UI.SetActive(false);
         }
 
         void Update()
         {
+            //On off pause screen
             if (Input.GetButtonDown("Pause"))
             {
                 paused = !paused;
             }
-
+            //Time switch
             if (paused)
             {
                 Pause_UI.SetActive(true);
@@ -37,6 +39,7 @@ public class Pause_Menu : MonoBehaviour
 
             }
         }
+    //Pause Buttons
     public void Resume()
     {
         paused = false;
