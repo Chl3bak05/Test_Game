@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spikes : MonoBehaviour {
 
     private Player player;
-    private Anim_Player animn;
+    private Anim_Player anim;
 
     void Start()
     {
