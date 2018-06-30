@@ -26,6 +26,7 @@ public class AITurret : MonoBehaviour
     public Animator anim;
     public Transform shootPointLeft;
     public Transform shootPointRight;
+    public Player player;
 
     void Awake()
     {
@@ -72,6 +73,12 @@ public class AITurret : MonoBehaviour
 
         anim.SetBool("Awake", awake);
         anim.SetBool("LookRight", lookingRight);
+
+        if (curHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     public void Attack(bool attackingRight)
@@ -81,15 +88,14 @@ public class AITurret : MonoBehaviour
 
         if (bulletTimer >= shootInterval)
         {
-            Vector2 direction = target.transform.position - transform.position;
-            direction = direction + new Vector2(0, 0.5F);
-           
+            float directionY = target.transform.position.y - transform.position.y + 0.5F;            
+
 
             if (!attackingRight )
             {
                 GameObject bulletClone;
                 bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation) as GameObject;
-                bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-1 , directionY) * bulletSpeed;
 
                 bulletTimer = 0;
             }
@@ -98,11 +104,17 @@ public class AITurret : MonoBehaviour
             {
                 GameObject bulletClone;
                 bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
-                bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(1, directionY) * bulletSpeed;
 
                 bulletTimer = 0;
             }
         }
+    }
+
+    public void Damage(int damage)
+    {
+        curHealth -= damage;
+        gameObject.GetComponent<Animation>().Play("RedFlashAnim");
     }
 
 }

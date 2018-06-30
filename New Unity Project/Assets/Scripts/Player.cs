@@ -130,14 +130,22 @@ public class Player : MonoBehaviour {
     //Damaging player
     public void Damage(int dmg)
     {
+        
         if (cur_health < dmg)
         {
             dmg = cur_health;
         }
         cur_health -= dmg;
-    
-
-
+        StartCoroutine(HurtAnim());
+        
+        
+    }
+    //Hurting Anim Iterator
+    private IEnumerator HurtAnim()
+    {
+        hurt = true;
+        yield return new WaitForSeconds(0.14F);
+        hurt = false;
     }
     //Knockback, adding force in time
     public IEnumerator KnockBack(float knockDur, float knockBackPwr, Vector3 knockBackDir)
@@ -149,11 +157,11 @@ public class Player : MonoBehaviour {
             timer += Time.deltaTime;
             rb2d_player.velocity = new Vector2(0, 0);   //<----------------------
             rb2d_player.AddForce(new Vector3(knockBackDir.x * -100, knockBackPwr, transform.position.z));
-            hurt = true;
+            
 
         }
         yield return 0;
-        hurt = false;
+        
     }
 }
 
